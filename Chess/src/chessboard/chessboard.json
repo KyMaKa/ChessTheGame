@@ -1,0 +1,54 @@
+{
+  "Chessboard": 6,
+  "Pieces": [
+    {
+      "name": "Pawn",
+      "color": "WHITE",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "name": "Pawn",
+      "color": "WHITE",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "name": "King",
+      "color": "WHITE",
+      "x": 4,
+      "y": 0
+    },
+    {
+      "name": "King",
+      "color": "BLACK",
+      "x": 0,
+      "y": 5
+    },
+    {
+      "name": "Pawn",
+      "color": "BLACK",
+      "x": 1,
+      "y": 5
+    },
+    {
+      "name": "Pawn",
+      "color": "BLACK",
+      "x": 3,
+      "y": 5
+    },
+    {
+      "name": "Pawn",
+      "color": "BLACK",
+      "x": 2,
+      "y": 5
+    },
+    {
+      "name": "Custom",
+      "move": "Rook",
+      "color": "WHITE",
+      "x": 5,
+      "y": 0
+    }
+  ]
+}
