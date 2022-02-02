@@ -49,6 +49,20 @@
       "color": "WHITE",
       "x": 5,
       "y": 0
+    },
+    {
+      "name": "Rook",
+      "move": "Rook",
+      "color": "WHITE",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "name": "Bishop",
+      "move": "Custom1",
+      "color": "BLACK",
+      "x": 2,
+      "y": 4
     }
   ]
 }

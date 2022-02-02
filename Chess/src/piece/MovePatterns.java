@@ -2,16 +2,41 @@ package piece;
 
 import chessboard.ChessBoard;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MovePatterns {
 
   ChessBoard board;
   Piece p;
   String pattern;
+  ArrayList<String> patterns;
   public MovePatterns(ChessBoard board, Piece p, String pattern) {
     this.board = board;
     this.p = p;
     this.pattern = pattern;
+  }
+
+  public MovePatterns(ChessBoard board, Piece p, ArrayList<String> patterns) {
+    this.board = board;
+    this.p = p;
+    this.patterns = patterns;
+  }
+
+  public ArrayList<Coordinate> getSeveralPossibleMoves() {
+    Iterator<String> iterator = this.patterns.iterator();
+    ArrayList<Coordinate> coordinates = new ArrayList<>();
+    while (iterator.hasNext()) {
+      String pattern = iterator.next();
+      if (pattern.equals("Bishop"))
+        coordinates.addAll(getMovesBishop());
+      if (pattern.equals("Knight"))
+        coordinates.addAll(getMoverKnight());
+      if (pattern.equals("Queen"))
+        coordinates.addAll(getMovesQueen());
+      if (pattern.equals("Rook"))
+        coordinates.addAll(getMovesRook());
+    }
+    return coordinates;
   }
 
   public ArrayList<Coordinate> getPossibleMoves() {
@@ -23,7 +48,19 @@ public class MovePatterns {
       return getMovesQueen();
     if (pattern.equals("Rook"))
       return getMovesRook();
+    if (pattern.equals("Custom1"))
+      return getMovesCustom1();
     return null;
+  }
+
+  public ArrayList<Coordinate> getMovesCustom1() {
+    int current_x_coord = this.p.x_coordinate;       // get current x coord of pawn
+    int current_y_coord = this.p.y_coordinate;       // get current y coord of pawn
+    ChessBoard board = this.board;
+    ArrayList<Coordinate> coords = new ArrayList<>();
+    coords.addAll(getMovesSideways(current_x_coord, current_y_coord, board));
+    coords.addAll(getMoverKnight());
+    return coords;
   }
 
   public ArrayList<Coordinate> getMovesBishop() {
