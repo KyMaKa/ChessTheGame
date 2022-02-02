@@ -285,21 +285,10 @@ public class ChessBoard {
             if (name.equals("Pawn")) {
                 p = new Pawn(this, player);
             }
-            if (name.equals("Queen")) {
-                p = new Queen(this, player);
-            }
-            if (name.equals("Rook")) {
-                p = new Rook(this, player);
-            }
-            if (name.equals("Bishop")) {
-                p = new Bishop(this, player);
-            }
             if (name.equals("King")) {
                 p = new King(this, player);
             }
-            if (name.equals("Knight")) {
-                p = new Knight(this, player);
-            }
+
             if (move != null) {
                 if (name.equals("Custom")) {
                     p = new CustomPiece(move, this, player);
@@ -322,28 +311,28 @@ public class ChessBoard {
         // ===============
         //  player1 white
         // ===============
-        p = new Rook(this, Player.WHITE); // a1 white rook
+        p = new CustomPiece("Rook", "Rook",this, Player.WHITE); // a1 white rook
         p.setCoordinate(0, 0);
 
-        p = new Knight(this, Player.WHITE); // b1 white knight
+        p = new CustomPiece("Knight","Knight", this, Player.WHITE); // b1 white knight
         p.setCoordinate(1, 0);
 
-        p = new Bishop(this, Player.WHITE); // c1 white bishop
+        p = new CustomPiece("Bishop", "Bishop",this, Player.WHITE); // c1 white bishop
         p.setCoordinate(2, 0);
 
-        p = new Queen(this, Player.WHITE); // d1 white queen
+        p = new CustomPiece("Queen", "Queen", this, Player.WHITE); // d1 white queen
         p.setCoordinate(3, 0);
 
         p = new King(this, Player.WHITE);   // e1 white king
         p.setCoordinate(4, 0);
 
-        p = new Bishop(this, Player.WHITE); // f1 white bishop
+        p = new CustomPiece("Bishop", "Bishop", this, Player.WHITE); // f1 white bishop
         p.setCoordinate(5, 0);
 
-        p = new Knight(this, Player.WHITE); // g1 white knight
+        p = new CustomPiece("Knight", "Knight", this, Player.WHITE); // g1 white knight
         p.setCoordinate(6, 0);
 
-        p = new Rook(this, Player.WHITE);   // h2 white rook
+        p = new CustomPiece("Rook", "Rook", this, Player.WHITE);   // h2 white rook
         p.setCoordinate(7, 0);
 
         p = new Pawn(this, Player.WHITE);   // a2 white pawn
@@ -374,28 +363,28 @@ public class ChessBoard {
         // ===============
         //  player2 black
         // ===============
-        p = new Rook(this, Player.BLACK); // a8 black rook
+        p = new CustomPiece("Rook", "Rook", this, Player.BLACK); // a8 black rook
         p.setCoordinate(0, 7);
 
-        p = new Knight(this, Player.BLACK); // b8 black knight
+        p = new CustomPiece("Knight", "Knight", this, Player.BLACK); // b8 black knight
         p.setCoordinate(1, 7);
 
-        p = new Bishop(this, Player.BLACK); // c8 black bishop
+        p = new CustomPiece("Bishop", "Bishop",this, Player.BLACK); // c8 black bishop
         p.setCoordinate(2, 7);
 
-        p = new Queen(this, Player.BLACK); // d8 black queen
+        p = new CustomPiece("Queen", "Queen", this, Player.BLACK); // d8 black queen
         p.setCoordinate(3, 7);
 
         p = new King(this, Player.BLACK);   // e8 black king
         p.setCoordinate(4, 7);
 
-        p = new Bishop(this, Player.BLACK); // f8 black bishop
+        p = new CustomPiece("Bishop", "Bishop", this, Player.BLACK); // f8 black bishop
         p.setCoordinate(5, 7);
 
-        p = new Knight(this, Player.BLACK); // g8 black knight
+        p = new CustomPiece("Knight", "Knight",this, Player.BLACK); // g8 black knight
         p.setCoordinate(6, 7);
 
-        p = new Rook(this, Player.BLACK);   // h8 black rook
+        p = new CustomPiece("Rook", "Rook", this, Player.BLACK);   // h8 black rook
         p.setCoordinate(7, 7);
 
         p = new Pawn(this, Player.BLACK);   // a7 black pawn
